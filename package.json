@@ -1,8 +1,8 @@
 {
   "name": "colon-template",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "simple inline template that uses colons",
-  "keywords": [],
+  "keywords": ["template", "colon", "simple", "inline"],
   "author": "Matthew Mueller <mattmuelle@gmail.com>",
   "repository": {
     "type": "git",
@@ -12,8 +12,7 @@
     "propget": "1.0.0"
   },
   "devDependencies": {
-    "mocha": "2.4.5",
-    "should": "*"
+    "mocha": "2.4.5"
   },
   "main": "index"
 }
