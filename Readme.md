@@ -1,31 +1,23 @@
 
 # colon-template
 
-  simple inline template that uses colons
+  simple inline template that uses colons. This probably already exists,
+  but it's about as fast to make as find.
 
+## Example
 
+```js
+var template = require('colon-template')
+var fn = template('hi :friend, my name is :first_name and i am :age.years years and :age.months months old')
+var locals = { friend: 'martha', first_name: 'matt', age: { years: 26 } }
+```
+
+## Installation
+
+```
+npm install colon-template
+```
 
 ## License
 
-(The MIT License)
-
-Copyright (c) 2016 Matthew Mueller &lt;mattmuelle@gmail.com&gt;
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-'Software'), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+MIT
