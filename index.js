@@ -2,7 +2,7 @@
  * Regexp
  */
 
-var rtemplate = /\:([$A-Za-z_][[$A-Za-z_\.0-9]+)/g
+var rtemplate = /(\\?:)([$A-Za-z_][[$A-Za-z_\.0-9]+)/g
 var prop = require('propget')
 
 /**
@@ -28,8 +28,12 @@ function template (str, obj) {
 function compile (str) {
   return function render (obj) {
     obj = obj || {}
-    return str.replace(rtemplate, function (sub, name) {
-      return prop(obj, name)
+    return str.replace(rtemplate, function (sub, ch, name) {
+      if (ch === '\\:') {
+        return ch.slice(1) + name
+      } else {
+        return prop(obj, name)
+      }
     })
   }
 }
