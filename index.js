@@ -2,7 +2,7 @@
  * Regexp
  */
 
-var rtemplate = /(\\?:)([$A-Za-z_][[$A-Za-z_\.0-9]+)/g
+var rtemplate = /(\\?:|::)([$A-Za-z_][[$A-Za-z_\.0-9]+)/g
 var prop = require('propget')
 
 /**
@@ -31,6 +31,8 @@ function compile (str) {
     return str.replace(rtemplate, function (sub, ch, name) {
       if (ch === '\\:') {
         return ch.slice(1) + name
+      } else if (ch === '::') {
+        return sub
       } else {
         return prop(obj, name)
       }
