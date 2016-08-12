@@ -25,4 +25,10 @@ describe('colon-template', function() {
     var str = template('::friend, my name is :first_name and i am \\:age.years years and :age.months months old', locals)
     assert.equal(str, '::friend, my name is matt and i am :age.years years and undefined months old')
   })
+
+  it('should handle things at the end', function() {
+    var locals = { value: { rem: 16 } }
+    var str = template(':value.remrem', locals)
+    assert.equal(str, '16rem')
+  })
 })

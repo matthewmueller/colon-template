@@ -14,6 +14,7 @@
     "url": "git://github.com/MatthewMueller/colon-template.git"
   },
   "dependencies": {
+    "escape-regexp": "0.0.1",
     "propget": "1.0.0"
   },
   "devDependencies": {
